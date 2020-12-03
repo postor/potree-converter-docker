@@ -5,6 +5,8 @@ RUN add-apt-repository ppa:ubuntu-toolchain-r/test -y
 
 RUN apt-get update && apt-get install -y g++-9 git cmake libboost-all-dev
 
+RUN apt remove -y cmake && apt install -y python-pip && pip install cmake
+
 RUN mkdir /data
 
 WORKDIR /data
